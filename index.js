@@ -59,7 +59,7 @@ app.use((err, req, res, next) => {
 
 app.listen(app.get("port"), async () => {
   console.info("Phantom PDF Server Starting");
-  await initPhantom();
+  // await initPhantom();
   console.info("Phantom PDF Server Started");
 
   console.info(`CWD: ${process.cwd()}`);
