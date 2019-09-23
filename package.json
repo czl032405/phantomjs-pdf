@@ -1,0 +1,25 @@
+{
+  "name": "phantomjs-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "phantom": "^6.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/chenzhaolong/phantomjs-pdf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/chenzhaolong/phantomjs-pdf/issues"
+  },
+  "homepage": "https://gitlab.com/chenzhaolong/phantomjs-pdf#readme"
+}
