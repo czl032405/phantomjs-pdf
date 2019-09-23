@@ -14,6 +14,10 @@ async function initPhantom() {
   page.property("zoomFactor", 2);
 }
 
+async function exitPhantom() {
+  await instance.exit();
+}
+
 async function genSnapshot(url) {
   const fileName = `${path.basename(url)}.pdf`;
   const filePath = path.join(path.resolve("pdf"), fileName);
@@ -34,6 +38,8 @@ app.set("port", process.env.PORT || 3000);
 app.set("etag", false);
 app.set("trust proxy", true);
 
+app.use("/pdf", express.static("pdf"));
+
 app.get("/", async (req, res) => {
   res.send("running");
 });
@@ -42,7 +48,7 @@ app.get("/test", async (req, res) => {
   res.send({ page: !!page, instance: !!instance });
 });
 
-app.get("/pdf", async (req, res) => {
+app.get("/gen-pdf", async (req, res) => {
   let { url } = req.query;
   if (!url) {
     throw new Error("HTML URL Required");
