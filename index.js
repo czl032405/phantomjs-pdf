@@ -34,6 +34,10 @@ app.set("port", process.env.PORT || 3000);
 app.set("etag", false);
 app.set("trust proxy", true);
 
+app.get("/", async (req, res) => {
+  res.send("running");
+});
+
 app.get("/test", async (req, res) => {
   res.send("running");
 });
