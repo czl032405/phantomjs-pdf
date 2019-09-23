@@ -39,7 +39,7 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/test", async (req, res) => {
-  res.send("running");
+  res.send({ page: !!page, instance: !!instance });
 });
 
 app.get("/pdf", async (req, res) => {
@@ -63,7 +63,7 @@ app.use((err, req, res, next) => {
 
 app.listen(app.get("port"), async () => {
   console.info("Phantom PDF Server Starting");
-  // await initPhantom();
+  await initPhantom();
   console.info("Phantom PDF Server Started");
 
   console.info(`CWD: ${process.cwd()}`);
